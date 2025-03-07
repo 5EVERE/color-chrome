@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Montserrat Regular 400';
+}
+
+.range-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.accent {
+  accent-color: black;
+}
+#track {
+  background-color: black;
+}
+.ranking-slider {
+  display: flex;
+  flex-direction: column;
+}
+
+/* @font-face {
+  font-family: 'Montserrat Light 300';
+  src: local('Montserrat Light'), url('../fonts/Montserrat-Light.ttf') format('truetype');
+} */
+
+@font-face {
+  font-family: 'Montserrat Regular 400';
+  src: local('Montserrat Regular'), url('../fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin: 10px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+/* color history */
+
+.color-history {
+  background: conic-gradient(from 90deg at 1px 1px, #e2e8f0 90deg, #0000 0) -1px -1px / 21px 22px;
+  background-color: #caccd0;
+}
+
+/* n+78 after all colors not visible */
+.color-history-container div:nth-child(n+78):not(.delete-square){
+  display: none;
+}
+
+/* .delete-square */
+
+.delete-square {
+  width: 20px;
+  height: 21px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 1px solid red;
+  z-index: 0;
+}
+
+.delete-square::before, .delete-square::after {
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  position: absolute;
+  border-top: 1px solid red;
+}
+
+.delete-square::after {
+  transform: translate3d(-50%, -50%, 0) rotate(45deg);
+}
+
+.delete-square::before {
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+}
+
+/* Style the checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  background-color: #fff; /* Default background */
+  position: relative;
+  cursor: pointer;
+}
+
+/* When the checkbox is checked */
+input[type="checkbox"]:checked {
+  background-color: #fff; /* Set white background when checked */
+  border-color: #000; /* Optional: Change border color when checked */
+}
+
+/* Optional: Add a checkmark (custom style) */
+input[type="checkbox"]:checked::before {
+  content: "✔";
+  position: absolute;
+  top: -1px;
+  left: 3px;
+  font-size: 14px;
+  color: #000; /* Color of the checkmark */
+}
+
+.select:first-child {
+  color: #0f6cfc;
+  text-decoration: underline;
+}
+
+.zoom-08 {
+  zoom: 0.8;
+}
+
+.zoom-15 {
+  zoom: 1.5;
+}
+
+.scale-180 {
+  transform: scale(1.8);
+}
+
+
+.photoshop-picker {
+  background: #fff !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  width: 100% !important;
+}
+
+/* header */
+.photoshop-picker > div:nth-child(1) {
+  display: none;
+}
+
+.photoshop-picker > div:nth-child(2) > div:nth-child(3) {
+  width: 240px !important;
+}
+
+.photoshop-picker > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(1) {
+  margin-left: 20px;
+}
+
+/* hsv and rgb */
+.photoshop-picker > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(3) {
+  top: 125px;
+  left: 320px;
+  position: absolute !important;
+}
+
+.photoshop-picker > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(3) > div:nth-child(10) {
+  top: 7px!important;
+  right: 0!important;
+}
+
+.photoshop-picker > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(3) > div:nth-child(10) > div {
+  height: 27px!important;
+}
